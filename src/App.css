@@ -1,38 +1,211 @@
 .App {
   text-align: center;
+  background-color: #f5f5f5;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-dark {
+  text-align: center;
+  background-color: #152238;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+  color: #ffffff;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar {
+  background-color: #ffffff;
+  z-index: 100;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-dark {
+  background-color: #264348;
+  z-index: 100;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.card-dark {
+  background-color: #264348 !important;
+}
+.chat {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  cursor: pointer;
+}
+.content {
+  text-align: center;
+}
+.column {
+  width: 250px;
+  max-height: 85vh;
+  margin: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  overflow-x: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.column .header {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.column .body {
+  overflow: auto;
+  height: 100%;
+  overflow-y: auto;
+}
+.column .header .title {
+  font-weight: 500;
+  font-size: large;
+  text-align: left;
+  padding-left: 10px;
+}
+.add-task {
+  margin-right: 10px;
+}
+.taskcard {
+  position: relative;
+  padding: 5px;
+  text-align: left;
+  margin: 5px;
+}
+.taskcard-dark {
+  position: relative;
+  padding: 5px;
+  text-align: left;
+  margin: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.taskcard:hover {
+  position: relative;
+  padding: 5px;
+  text-align: left;
+  margin: 5px;
+  background-color: #f5f5f5;
+  height: 70px;
+}
+.hovercard-dark:hover {
+  background-color: #152238 !important;
+}
+.tasktext {
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.tasktext:hover {
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.taskicons {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.icon {
+  height: 20px;
+  width: 20px;
+  margin-left: 2px;
+  margin-right: 2px;
+  cursor: pointer;
+}
+.check-icon {
+  height: 40px;
+  width: 40px;
+  margin-left: 2px;
+  margin-right: 2px;
+  cursor: pointer;
+}
+input[type="text"] {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.taskicons .tooltiptext {
+  display: none;
+  width: 120px;
+  background-color: grey;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+.taskicons:hover .tooltiptext {
+  display: block;
+  top: -5px;
+  right: 105%;
+}
+@media (min-width: 1600px) {
+  .content {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
   }
-  to {
-    transform: rotate(360deg);
+  .column {
+    flex: 0 0 auto;
+    width: 450px;
+    min-height: 85vh;
+    margin: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    overflow-x: hidden;
+  }
+  .modal-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 1600px) {
+  .content {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .column {
+    flex: 0 0 auto;
+    width: 350px;
+    min-height: 85vh;
+    margin: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    overflow-x: hidden;
+  }
+  .modal-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
   }
 }
