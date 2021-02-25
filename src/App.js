@@ -61,7 +61,7 @@ function App() {
   return (
     <div className={darkTheme ? "App-dark" : "App"}>
       <Navbar className={darkTheme ? "navbar-dark" : "navbar"}>
-        <Navbar.Brand href="#">ALLOcloud</Navbar.Brand>
+        <Navbar.Brand href="#">Kanban Board</Navbar.Brand>
         <Navbar.Collapse className="justify-content-end">
           {darkTheme ? (
             <img
